@@ -29,7 +29,7 @@ function convertValues() {
             style: "currency",
             currency:"USD"
 
-        }).format(inputCurrencyValue)
+        }).format(inputCurrencyValue * dollarToday)
     }
 
     if ( currencySelectFirst.value == "euro") {
@@ -37,7 +37,7 @@ function convertValues() {
             style: "currency",
             currency:"EUR"
 
-        }).format(inputCurrencyValue)
+        }).format(inputCurrencyValue * euroToday)
     }
 
     if ( currencySelectFirst.value == "libra") {
@@ -45,7 +45,7 @@ function convertValues() {
             style: "currency",
             currency:"GBP"
 
-        }).format(inputCurrencyValue)
+        }).format(inputCurrencyValue * libraToday)
     }
 
     if (currencySelect.value == "dolar") {
