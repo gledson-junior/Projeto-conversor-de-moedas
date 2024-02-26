@@ -16,40 +16,47 @@ function convertValues() {
     const libraToday = 6.21
     const realToday = 1
 
-    
-    
+
+
     // real para outras moedas
 
     if (currency.value == "real" && currencyToConvert.value == "dolar") {
-        valorAConverter.innerHTML = "R$ " + inputCurrencyValue;
-        let conversao = inputCurrencyValue / dollarToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("en-US", {
+        valorAConverter.innerHTML = new Intl.NumberFormat("pt-BR", {
             style: "currency",
-            currency: "USD",
-        }).format(conversao);
+            currency: "BRL",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD"
+            }).format(inputCurrencyValue / dollarToday)
     }
 
 
-    if (currency.value == "real" && currencyToConvert.value == "euro") {
-        valorAConverter.innerHTML = "R$ " + inputCurrencyValue;
-        let conversao = inputCurrencyValue / euroToday;
 
-        valorConvertido.innerHTML = new Intl.NumberFormat("de-DE", {
+    if (currency.value == "real" && currencyToConvert.value == "euro") {
+        valorAConverter.innerHTML = new Intl.NumberFormat("pt-BR", {
             style: "currency",
-            currency: "EUR",
-        }).format(conversao);
+            currency: "BRL",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("de-DE", {
+                style: "currency",
+                currency: "EUR",
+            }).format(inputCurrencyValue / euroToday);
     }
 
 
     if (currency.value == "real" && currencyToConvert.value == "libra") {
-        valorAConverter.innerHTML = "R$ " + inputCurrencyValue;
-        let conversao = inputCurrencyValue / libraToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("us-UK", {
+        valorAConverter.innerHTML = new Intl.NumberFormat("pt-BR", {
             style: "currency",
-            currency: "GBP",
-        }).format(conversao);
+            currency: "BRL",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("us-UK", {
+                style: "currency",
+                currency: "GBP",
+            }).format(inputCurrencyValue / libraToday);
     }
 
 
@@ -59,131 +66,122 @@ function convertValues() {
 
     // dollar para outras moedas
 
-    if (
-        currency.value == "dolar" &&
-        currencyToConvert.value == "real"
-    ) {
-        valorAConverter.innerHTML = "$ " + inputCurrencyValue;
-        let conversao = (inputCurrencyValue * dollarToday) / realToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-        }).format(conversao);
-    }
-
-    if (
-        currency.value == "dolar" &&
-        currencyToConvert.value == "libra"
-    ) {
-        valorAConverter.innerHTML = "$ " + inputCurrencyValue;
-        let conversao = (inputCurrencyValue * dollarToday) / libraToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("us-UK", {
-            style: "currency",
-            currency: "GBP",
-        }).format(conversao);
-    }
-
-    if (
-        currency.value == "dolar" &&
-        currencyToConvert.value == "euro"
-    ) {
-        valorAConverter.innerHTML = "$ " + inputCurrencyValue;
-        let conversao = (inputCurrencyValue * dollarToday) / euroToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("de-DE", {
-            style: "currency",
-            currency: "EUR",
-        }).format(conversao);
-    }
-
-    
-    
-    
-    // Euro para outras moedas
-
-    if (
-        currency.value == "euro" &&
-        currencyToConvert.value == "real"
-    ) {
-        valorAConverter.innerHTML = "€ " + inputCurrencyValue;
-        let conversao = (inputCurrencyValue * euroToday) / realToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-        }).format(conversao);
-    }   
-
-    if (
-        currency.value == "euro" &&
-        currencyToConvert.value == "dolar"
-    ) {
-        valorAConverter.innerHTML = "€ " + inputCurrencyValue;
-        let conversao = (inputCurrencyValue * euroToday) / dollarToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("en-US", {
+    if (currency.value == "dolar" && currencyToConvert.value == "real") {
+        valorAConverter.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
-        }).format(conversao);
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+            }).format((inputCurrencyValue * dollarToday) / realToday);
     }
 
-    if (
-        currency.value == "euro" &&
-        currencyToConvert.value == "libra"
-    ) {
-        valorAConverter.innerHTML = "€ " + inputCurrencyValue;
-        let conversao = (inputCurrencyValue * euroToday) / libraToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("us-UK", {
+    if (currency.value == "dolar" && currencyToConvert.value == "libra") {
+        valorAConverter.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
-            currency: "GBP",
-        }).format(conversao);
+            currency: "USD",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("us-UK", {
+                style: "currency",
+                currency: "GBP",
+            }).format((inputCurrencyValue * dollarToday) / libraToday);
+    }
+
+    if (currency.value == "dolar" && currencyToConvert.value == "euro") {
+        valorAConverter.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("de-DE", {
+                style: "currency",
+                currency: "EUR",
+            }).format((inputCurrencyValue * dollarToday) / euroToday);
+    }
+
+
+
+
+    // Euro para outras moedas
+
+    if (currency.value == "euro" && currencyToConvert.value == "real") {
+        valorAConverter.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "EUR",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+            }).format((inputCurrencyValue * euroToday) / realToday);
+    }
+
+    if (currency.value == "euro" && currencyToConvert.value == "dolar") {
+        valorAConverter.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "EUR",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+            }).format((inputCurrencyValue * euroToday) / dollarToday);
+    }
+
+    if (currency.value == "euro" && currencyToConvert.value == "libra") {
+        valorAConverter.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "EUR",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("us-UK", {
+                style: "currency",
+                currency: "GBP",
+            }).format((inputCurrencyValue * euroToday) / libraToday);
     }
 
 
     // Libra para outras moedas
 
-    if (
-        currency.value == "libra" &&
-        currencyToConvert.value == "real"
-    ) {
-        valorAConverter.innerHTML = "£" + inputCurrencyValue;
-        let conversao = (inputCurrencyValue * libraToday) / realToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("pt-BR", {
+    if (currency.value == "libra" && currencyToConvert.value == "real") {
+        valorAConverter.innerHTML = new Intl.NumberFormat("us-UK", {
             style: "currency",
-            currency: "BRL",
-        }).format(conversao);
+            currency: "GBP",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+            }).format((inputCurrencyValue * libraToday) / realToday);
     }
 
-    if (
-        currency.value == "libra" &&
-        currencyToConvert.value == "dolar"
-    ) {
-        valorAConverter.innerHTML = "£" + inputCurrencyValue;
-        let conversao = (inputCurrencyValue * libraToday) / dollarToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("en-US", {
+    if (currency.value == "libra" && currencyToConvert.value == "dolar") {
+        valorAConverter.innerHTML = new Intl.NumberFormat("us-UK", {
             style: "currency",
-            currency: "USD",
-        }).format(conversao);
+            currency: "GBP",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+            }).format((inputCurrencyValue * libraToday) / dollarToday);
     }
 
-    if (
-        currency.value == "libra" &&
-        currencyToConvert.value == "euro"
-    ) {
-        valorAConverter.innerHTML = "£" + inputCurrencyValue;
-        let conversao = (inputCurrencyValue * libraToday) / euroToday;
-
-        valorConvertido.innerHTML = new Intl.NumberFormat("us-UK", {
+    if (currency.value == "libra" && currencyToConvert.value == "euro") {
+        valorAConverter.innerHTML = new Intl.NumberFormat("us-UK", {
             style: "currency",
-            currency: "EUR",
-        }).format(conversao);
+            currency: "GBP",
+        }).format(inputCurrencyValue),
+
+            valorConvertido.innerHTML = new Intl.NumberFormat("us-UK", {
+                style: "currency",
+                currency: "EUR",
+            }).format((inputCurrencyValue * libraToday) / euroToday);
     }
-    
+
 
 }
 function changeCurrency() {

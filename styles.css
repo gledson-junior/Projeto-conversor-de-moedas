@@ -101,7 +101,7 @@ section {
 }
 
 .arrow-img {
-    margin: 15px 0;
+    margin: 25px 0;
 
 }
 
@@ -130,3 +130,44 @@ section {
     font-size: 20px;
     font-weight: 700;
 }
+
+ @media(max-width: 1600px){
+    
+    .logo{
+        width: 150px;
+        height: 150px;
+    }
+    
+    
+    main{
+        width: 300px;
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .valores{
+        width: 250px;
+    }
+
+    section{
+        width: 250px;
+        height: 200px;
+        padding: 10px;
+    }
+
+    .moeda{
+        margin: 0 10px;
+    }
+
+    .currency-box{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .arrow-img{
+        margin: 15px 0;
+    }
+ }
+    
+ 
