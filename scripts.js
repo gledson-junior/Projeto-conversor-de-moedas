@@ -1,7 +1,7 @@
 const convertButton = document.querySelector(".convert-button")
 const currencyToConvert = document.querySelector(".currency-to-convert")
 const currency = document.querySelector(".currency")
-
+const input = document.querySelector(".input-currency")
 
 function convertValues() {
     const inputCurrencyValue = document.querySelector(".input-currency").value
@@ -63,7 +63,7 @@ function convertValues() {
         currency.value == "dolar" &&
         currencyToConvert.value == "real"
     ) {
-        valorAConverter.innerHTML = "US$ " + inputCurrencyValue;
+        valorAConverter.innerHTML = "$ " + inputCurrencyValue;
         let conversao = (inputCurrencyValue * dollarToday) / realToday;
 
         valorConvertido.innerHTML = new Intl.NumberFormat("pt-BR", {
@@ -76,7 +76,7 @@ function convertValues() {
         currency.value == "dolar" &&
         currencyToConvert.value == "libra"
     ) {
-        valorAConverter.innerHTML = "US$ " + inputCurrencyValue;
+        valorAConverter.innerHTML = "$ " + inputCurrencyValue;
         let conversao = (inputCurrencyValue * dollarToday) / libraToday;
 
         valorConvertido.innerHTML = new Intl.NumberFormat("us-UK", {
@@ -89,7 +89,7 @@ function convertValues() {
         currency.value == "dolar" &&
         currencyToConvert.value == "euro"
     ) {
-        valorAConverter.innerHTML = "US$ " + inputCurrencyValue;
+        valorAConverter.innerHTML = "$ " + inputCurrencyValue;
         let conversao = (inputCurrencyValue * dollarToday) / euroToday;
 
         valorConvertido.innerHTML = new Intl.NumberFormat("de-DE", {
