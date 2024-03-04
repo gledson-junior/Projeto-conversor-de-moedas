@@ -8,7 +8,7 @@
 
 body {
     background-image: url("assets/backgrouns2.jpg");
-    background-size: cover;
+    background-size: cover 100vh;
     background-repeat: no-repeat;
     
     
@@ -139,6 +139,7 @@ section {
     
     body{
         background-image: url(./assets/mobile-wpp.jpg);
+        background-size: cover 
     }
     .logo{
         width: 150px;
@@ -148,7 +149,7 @@ section {
     
     main{
         width: 300px;
-        height: 700px;
+        height: 650px;
         display: flex;
         flex-direction: column;
     }
