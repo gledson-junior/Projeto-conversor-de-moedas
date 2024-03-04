@@ -7,7 +7,11 @@
 }
 
 body {
-    background-image: url("assets/Dol-wppr.jpg");
+    background-image: url("assets/backgrouns2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    
 }
 
 .logo {
@@ -133,6 +137,9 @@ section {
 
  @media(max-width: 1600px){
     
+    body{
+        background-image: url(./assets/mobile-wpp.jpg);
+    }
     .logo{
         width: 150px;
         height: 150px;
